@@ -11,6 +11,12 @@ import os
 import scipy.io as sio
 import scipy.sparse as sp
 
+def sample_mask(idx, l):
+    """Create mask."""
+    mask = np.zeros(l)
+    mask[idx] = 1
+    return np.array(mask, dtype=np.bool)
+
 def load_data_dblp(path='/kfdata01/kf_grp/chensx/HAN/data/acm/ACM3025.mat'):
     data = sio.loadmat(path)
     truelabels, truefeatures = data['label'], data['feature'].astype(float)

@@ -3,7 +3,7 @@
 import scipy.io as sio
 import scipy.sparse as sp
 
-def load_data_dblp(path='/Users/csx/GitProject/HAN/data/acm/ACM3025.mat'):
+def load_data_dblp(path='/kfdata01/kf_grp/chensx/HAN/data/acm/ACM3025.mat'):
     data = sio.loadmat(path)
     truelabels, truefeatures = data['label'], data['feature'].astype(float)
     N = truefeatures.shape[0]
